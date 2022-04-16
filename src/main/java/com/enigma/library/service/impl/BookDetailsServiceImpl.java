@@ -24,7 +24,7 @@ public class BookDetailsServiceImpl implements BookDetailsService {
     }
 
     @Override
-    public void saveMember(String id) {
+    public void saveDetailService(String id) {
         Book book = bookRepository.findById(id).get();
         BookDetails bookDetails = new BookDetails();
         bookDetails.setBook(book);

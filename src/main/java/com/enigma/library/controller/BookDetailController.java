@@ -22,5 +22,5 @@ public class BookDetailController {
     }
 
     @PostMapping
-    public void saveMember(@RequestParam String id) { bookDetailsService.saveMember(id); }
+    public void saveDetailService(@RequestParam String id) { bookDetailsService.saveDetailService(id); }
 }

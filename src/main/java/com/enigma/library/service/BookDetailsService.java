@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface BookDetailsService {
     public List<BookDetails> getAllDetails();
-    public void saveMember(String id);
+    public void saveDetailService(String id);
 }
