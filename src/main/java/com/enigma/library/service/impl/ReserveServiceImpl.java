@@ -1,5 +1,6 @@
 package com.enigma.library.service.impl;
 
+import com.enigma.library.entity.Book;
 import com.enigma.library.entity.BookDetails;
 import com.enigma.library.entity.Member;
 import com.enigma.library.entity.Reserve;
@@ -31,15 +32,19 @@ public class ReserveServiceImpl implements ReserveService {
     public void saveReserve(Date dateReserve, Date dateReturn, String memberId, Integer bookDetailsId) {
         Member member = memberRepository.findById(memberId).get();
         BookDetails bookDetails = bookDetailsRepository.findById(bookDetailsId).get();
-
         Reserve reserve = new Reserve();
 
-        reserve.setBookDetails(bookDetails);
-        reserve.setMember(member);
-        reserve.setDateReserve(dateReserve);
-        reserve.setDateReturn(dateReturn);
+        int getBookQty = bookDetails.getBook().getQuantity();
 
-        reserveRepository.save(reserve);
+        if (getBookQty >= 0) {
+            bookDetails.getBook().setQuantity(getBookQty-1);
+            reserve.setBookDetails(bookDetails);
+            reserve.setMember(member);
+            reserve.setDateReserve(dateReserve);
+            reserve.setDateReturn(dateReturn);
+
+            reserveRepository.save(reserve);
+        }
     }
 
 //    Book book = bookRepository.findById(id).get();

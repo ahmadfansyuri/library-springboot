@@ -8,6 +8,5 @@ import java.util.List;
 
 public interface ReserveService {
     public List<Reserve> getAllReserve();
-
     void saveReserve(Date dateReserve, Date dateReturn, String memberId, Integer bookDetailsId);
 }
