@@ -29,4 +29,9 @@ public class ReserveController {
     public void saveMember(@RequestParam Date dateReserve, @RequestParam Date dateReturn, @RequestParam String memberId, @RequestParam Integer bookDetailsId) {
         reserveService.saveReserve(dateReserve, dateReturn, memberId, bookDetailsId);
     }
+
+    @PutMapping
+    public void returnBook(@RequestParam Integer id) {
+        reserveService.returnBook(id);
+    }
 }

@@ -19,6 +19,8 @@ public class Reserve {
     private Date dateReserve;
     @Column(name = "date_return")
     private Date dateReturn;
+    private Integer qty;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name = "member_id")
