@@ -12,8 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping(ApiURLConstant.RESERVE)
 public class ReserveController {
-
-    final
+    @Autowired
     ReserveService reserveService;
 
     public ReserveController(ReserveService reserveService) {

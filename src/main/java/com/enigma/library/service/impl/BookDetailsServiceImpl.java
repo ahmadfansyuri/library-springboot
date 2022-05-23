@@ -20,7 +20,7 @@ public class BookDetailsServiceImpl implements BookDetailsService {
 
     @Override
     public List<BookDetails> getAllDetails() {
-        return bookDetailsRepository.findAll();
+        return bookDetailsRepository.getAllNative();
     }
 
     @Override
